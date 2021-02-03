@@ -1,10 +1,15 @@
+import os
+
 import asyncio
+from dotenv import load_dotenv
 
 from app.bot import Bot
 from app.database import Database
 
+load_dotenv()
 
-TOKEN = "NjgyMjUzMzE5OTM4MjQ0NjA5.XlaT6w.HdCLdqG5Y1BkALCJnoOOIvtgQmo"
+
+TOKEN = os.getenv("TOKEN")
 
 database = Database(
     "dbname", "dbuser", "dbpassword"
